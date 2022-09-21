@@ -14,12 +14,11 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <header className="Searchbar">
-        <form className="SearchForm" onSubmit={this.formSubmit}>
-          <button type="button" className="btn">
+      <header className="searchbar">
+        <form className="searchForm" onSubmit={this.formSubmit}>
+          <button type="submit" className="btn">
             <span className="btnLabel">Search</span>
           </button>
-
           <input
             className="input"
             type="text"
