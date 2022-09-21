@@ -53,12 +53,11 @@ class App extends React.Component {
     return (
       <div>
         <Searchbar changeQuery={this.changeQuery} />
-
+        {this.state.isLoading && <Loader />}
         <ImageGallery
           imageArray={this.state.images}
           toggleModal={this.toggleModal}
         />
-        {this.state.isLoading && <Loader />}
         {this.state.images.length > 2 && (
           <Button btnTitle="Load more" changePage={this.changePage} />
         )}
