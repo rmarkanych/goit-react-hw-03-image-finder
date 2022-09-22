@@ -4,9 +4,10 @@ const Loader = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(42px, 18px)',
       }}
     >
       <MagnifyingGlass

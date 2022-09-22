@@ -26,16 +26,18 @@ class App extends React.Component {
       this.state.query.trim() !== ''
     ) {
       this.setState({ isLoading: true });
-      const newArr = await fetchPictures(this.state.query, this.state.page)
-        .catch(err => console.log(err))
-        .finally(this.setState({ isLoading: false }));
+      const newArr = await fetchPictures(
+        this.state.query,
+        this.state.page
+      ).catch(err => console.log(err));
 
       if (this.state.page !== 1) {
         this.setState(prevState => ({
           images: [...prevState.images, ...newArr],
+          isLoading: false,
         }));
       } else {
-        this.setState({ images: [...newArr] });
+        this.setState({ images: [...newArr], isLoading: false });
       }
     }
   }
